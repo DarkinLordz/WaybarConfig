@@ -40,7 +40,6 @@ window#waybar {
 #clock,
 #pulseaudio,
 #custom-logo,
-#custom-power,
 #custom-spotify,
 #custom-notification,
 #temperature,
@@ -149,10 +148,6 @@ window#waybar.empty #window {
 
 #custom-logo {
   color: #89b4fa;
-}
-
-#custom-power {
-  color: #f38ba8;
 }
 
 tooltip {

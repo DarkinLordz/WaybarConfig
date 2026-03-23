@@ -22,8 +22,7 @@
   "clock",
   "clock#simpleclock",
   "tray",
-  "custom/notification",
-  "custom/power"
+  "custom/notification"
 ],
 
   "hyprland/workspaces": {
@@ -146,12 +145,6 @@
   "clock#simpleclock": {
     "tooltip": false,
     "format": " {:%H:%M}"
-  },
-
-  "custom/power": {
-    "tooltip": false,
-    "on-click": "wlogout -p layer-shell &",
-    "format": "⏻"
   },
 
   "custom/notification": {
