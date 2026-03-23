@@ -1,0 +1,170 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 40,
+  "spacing": 2,
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "passthrough": false,
+  "fixed-center": true,
+
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["mpris"],
+  "modules-right": [
+  "temperature",
+  "network",
+  "pulseaudio",
+  "custom/mic",
+  "power-profiles-daemon",
+  "battery",
+  "backlight",
+  "bluetooth",
+  "clock",
+  "clock#simpleclock",
+  "tray",
+  "custom/notification",
+  "custom/power"
+],
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{id}",
+    "all-outputs": true,
+    "disable-scroll": false,
+    "active-only": false
+  },
+
+  "hyprland/window": {
+    "format": "{title}"
+  },
+
+  "mpris": {
+    "player": "spotify",
+    "dynamic-order": ["artist", "title"],
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "status-icons": {
+      "paused": ""
+    },
+    "player-icons": {
+      "default": ""
+    }
+  },
+
+  "temperature": {
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C"
+  },
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 {ipaddr}",
+    "format-disconnected": "⚠ disconnected",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "on-click": "nm-connection-editor"
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "{profile}",
+    "format-icons": {
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    },
+    "on-click": "powerprofilesctl set performance",
+    "on-click-right": "powerprofilesctl set balanced",
+    "on-click-middle": "powerprofilesctl set power-saver"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " muted",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "custom/mic": {
+    "format": "{}",
+    "exec": "pamixer --default-source --get-volume-human",
+    "on-click": "pamixer --default-source -t",
+    "on-scroll-up": "pamixer --default-source -i 5",
+    "on-scroll-down": "pamixer --default-source -d 5",
+    "interval": 1,
+    "tooltip": false
+  },
+
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "backlight": {
+    "format": "󰃠 {percent}%"
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "on-click": "blueman-manager"
+  },
+
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10
+  },
+
+  "clock": {
+    "format": " {:L%a %d %b}",
+    "calendar": {
+      "format": {
+        "days": "<span weight='normal'>{}</span>",
+        "months": "<span color='#cdd6f4'><b>{}</b></span>",
+        "today": "<span color='#f38ba8' weight='700'><u>{}</u></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "weeks": "<span color='#a6e3a1'><b>W{}</b></span>"
+      },
+      "mode": "month",
+      "mode-mon-col": 1,
+      "on-scroll": 1
+    },
+    "tooltip-format": "<span color='#cdd6f4' font='Lexend 16'><tt><small>{calendar}</small></tt></span>"
+  },
+
+  "clock#simpleclock": {
+    "tooltip": false,
+    "format": " {:%H:%M}"
+  },
+
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "wlogout -p layer-shell &",
+    "format": "⏻"
+  },
+
+  "custom/notification": {
+    "escape": true,
+    "exec": "swaync-client -swb",
+    "exec-if": "which swaync-client",
+    "format": "{icon}",
+    "format-icons": {
+      "none": "󰅺",
+      "notification": "󰡟"
+    },
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "return-type": "json",
+    "tooltip": false
+  }
+}

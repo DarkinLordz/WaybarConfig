@@ -1,0 +1,162 @@
+* {
+  min-height: 0;
+  min-width: 0;
+  font-family: Lexend, "JetBrainsMono NFP";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* Workspaces */
+#workspaces button {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  border-radius: 6px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+#workspaces button:hover {
+  color: #1e1e2e;
+  background-color: #cdd6f4;
+}
+
+#workspaces button.active {
+  background-color: #1e1e2e;
+  color: #89b4fa;
+}
+
+#workspaces button.urgent {
+  background-color: #1e1e2e;
+  color: #f38ba8;
+}
+
+/* Shared module style */
+#clock,
+#pulseaudio,
+#custom-logo,
+#custom-power,
+#custom-spotify,
+#custom-notification,
+#temperature,
+#network,
+#battery,
+#backlight,
+#bluetooth,
+#custom-mic,
+#tray,
+#window,
+#mpris {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  border-radius: 6px;
+  background-color: #1e1e2e;
+}
+#power-profiles-daemon {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  border-radius: 6px;
+  background-color: #1e1e2e;
+  color: #a6e3a1;
+}
+
+/* Different profiles */
+#power-profiles-daemon.performance {
+  color: #f38ba8; /* red/pink = high power */
+}
+
+#power-profiles-daemon.balanced {
+  color: #89b4fa; /* blue = normal */
+}
+
+#power-profiles-daemon.power-saver {
+  color: #a6e3a1; /* green = saving */
+}
+
+/* States */
+#mpris.playing {
+  color: #a6e3a1;
+}
+
+#mpris.paused {
+  color: #9399b2;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#temperature {
+  color: #f9e2af;
+}
+
+#network {
+  color: #89dceb;
+}
+
+#battery {
+  color: #a6e3a1;
+}
+
+#battery.warning {
+  color: #f9e2af;
+}
+
+#battery.critical {
+  color: #f38ba8;
+}
+
+#battery.charging {
+  color: #94e2d5;
+}
+
+#backlight {
+  color: #f5c2e7;
+}
+
+#bluetooth {
+  color: #89b4fa;
+}
+
+#custom-mic {
+  color: #f38ba8;
+}
+
+#clock {
+  color: #74c7ec;
+}
+
+#clock.simpleclock {
+  color: #89b4fa;
+}
+
+#window {
+  color: #cdd6f4;
+}
+
+#pulseaudio {
+  color: #b4befe;
+}
+
+#pulseaudio.muted {
+  color: #a6adc8;
+}
+
+#custom-logo {
+  color: #89b4fa;
+}
+
+#custom-power {
+  color: #f38ba8;
+}
+
+tooltip {
+  background-color: #181825;
+  border: 2px solid #89b4fa;
+  border-radius: 6px;
+}
