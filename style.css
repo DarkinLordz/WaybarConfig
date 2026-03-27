@@ -22,7 +22,7 @@
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
-  background-color: rgba(255, 239, 246, 0.18);
+  background-color: rgba(255, 239, 246, 0);
 }
 
 /* Workspaces */
