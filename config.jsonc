@@ -6,7 +6,7 @@
   "exclusive": true,
   "gtk-layer-shell": true,
   "passthrough": false,
-  "fixed-center": true,
+  "fixed-center": false,
 
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["mpris"],
@@ -34,19 +34,42 @@
   },
 
   "hyprland/window": {
-    "format": "{title}"
+    "format": "{title}",
+    "separate-outputs": true,
+    "expand": true,
+    "max-length": 42
   },
 
   "mpris": {
     "player": "spotify",
     "dynamic-order": ["artist", "title"],
+    "dynamic-importance-order": ["title", "artist"],
+    "dynamic-separator": " • ",
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "format-stopped": "{player_icon}",
+    "tooltip-format": "<b>{title}</b>\n{artist}\n{album}\n{position}/{length}",
+    "tooltip-format-paused": "<b>{title}</b>\n{artist}\n{album}\nPaused • {position}/{length}",
+    "tooltip-format-stopped": "{player}",
+    "enable-tooltip-len-limits": true,
+    "artist-len": 18,
+    "album-len": 24,
+    "title-len": 24,
+    "dynamic-len": 34,
+    "max-length": 38,
+    "expand": true,
+    "ellipsis": "...",
     "status-icons": {
-      "paused": ""
+      "paused": "",
+      "stopped": ""
     },
     "player-icons": {
-      "default": ""
+      "default": "",
+      "spotify": "",
+      "firefox": "󰈹",
+      "chromium": "",
+      "vlc": "󰕼",
+      "mpv": "󰐹"
     }
   },
 
@@ -56,10 +79,18 @@
   },
 
   "network": {
-    "format-wifi": " {essid}",
-    "format-ethernet": "󰈀 {ipaddr}",
-    "format-disconnected": "⚠ disconnected",
-    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰈀 wired",
+    "format-linked": "󰈀 link",
+    "format-disconnected": "󰖪 offline",
+    "format-disabled": "󰖪 blocked",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "tooltip-format": "{ifname}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr} via {gwaddr}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr} via {gwaddr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-disabled": "Wi-Fi blocked",
+    "max-length": 18,
     "on-click": "nm-connection-editor"
   },
 
@@ -83,6 +114,7 @@
       "headphone": "",
       "default": ["", "", ""]
     },
+    "max-length": 12,
     "on-click": "pavucontrol"
   },
 
@@ -115,14 +147,21 @@
 
   "bluetooth": {
     "format": " {status}",
+    "format-disabled": " off",
+    "format-off": " off",
+    "format-on": " on",
     "format-connected": " {device_alias}",
     "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "max-length": 18,
     "on-click": "blueman-manager"
   },
 
   "tray": {
     "show-passive-items": true,
-    "spacing": 10
+    "icon-size": 16,
+    "spacing": 6
   },
 
   "clock": {
