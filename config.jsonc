@@ -169,16 +169,16 @@
     "calendar": {
       "format": {
         "days": "<span weight='normal'>{}</span>",
-        "months": "<span color='#d94d8d'><b>{}</b></span>",
-        "today": "<span color='#ff66ad' weight='700'><u>{}</u></span>",
-        "weekdays": "<span color='#e96b98'><b>{}</b></span>",
-        "weeks": "<span color='#c95686'><b>W{}</b></span>"
+        "months": "<span color='#bbdaff'><b>{}</b></span>",
+        "today": "<span color='#99ffff' weight='700'><u>{}</u></span>",
+        "weekdays": "<span color='#d1f1a9'><b>{}</b></span>",
+        "weeks": "<span color='#ebbbff'><b>W{}</b></span>"
       },
       "mode": "month",
       "mode-mon-col": 1,
       "on-scroll": 1
     },
-    "tooltip-format": "<span color='#7d2b56' font='Lexend 16'><tt><small>{calendar}</small></tt></span>"
+    "tooltip-format": "<span color='#f5f9ff' font='Lexend 16'><tt><small>{calendar}</small></tt></span>"
   },
 
   "clock#simpleclock": {
