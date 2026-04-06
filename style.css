@@ -81,7 +81,6 @@ window#waybar {
 #bluetooth,
 #custom-mic,
 #tray,
-#window,
 #mpris,
 #power-profiles-daemon {
   padding: 0.35rem 0.95rem;
@@ -94,14 +93,8 @@ window#waybar {
   color: @text;
 }
 
-#window,
 #mpris {
   border-color: rgba(187, 218, 255, 0.34);
-}
-
-#window {
-  padding-left: 1.1rem;
-  padding-right: 1.1rem;
 }
 
 #power-profiles-daemon {
@@ -127,13 +120,6 @@ window#waybar {
 
 #mpris.paused {
   color: @muted;
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
-  background-image: none;
-  border-color: transparent;
-  box-shadow: none;
 }
 
 #temperature {
@@ -178,10 +164,6 @@ window#waybar.empty #window {
 
 #clock.simpleclock {
   color: @cyan;
-}
-
-#window {
-  color: @text;
 }
 
 #pulseaudio {
